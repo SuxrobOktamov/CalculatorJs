@@ -1,0 +1,399 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bg-color: #3a4764 ;
+
+    --grayish: #fff;
+
+    --grayishS:hsl(221, 14%, 31%);
+
+    --bg-red: hsl(6, 63%, 50%);
+    --bg-red_hover: hsl(6, 70%, 34%);
+
+    --bg-toggle: hsl(223, 31%, 20%);
+
+    --bg-value: hsl(224, 36%, 15%);
+
+    --bg-num:  hsl(30, 25%, 89%);
+    --bg-num_hover:  hsl(28, 16%, 65%);
+
+
+}
+
+.darkTwo {
+    --bg-color: hsl(0, 0%, 100%);
+
+    --grayish:hsl(268, 71%, 12%);
+
+    --grayishS:hsl(268, 71%, 12%);
+
+    --bg-red:  hsl(25, 98%, 40%);
+    --bg-red_hover: hsl(25, 99%, 27%);
+
+    --bg-toggle:  hsl(0, 5%, 81%);
+
+    --bg-value: hsl(0, 0%, 93%);
+
+    --bg-num:  hsl(30, 25%, 89%);
+    --bg-num_hover:  hsl(28, 16%, 65%);
+}
+
+.darkThree {
+    --bg-color: hsl(268, 75%, 9%);
+
+    --grayish: hsl(52, 100%, 62%);
+
+    --grayishS: hsl(52, 100%, 62%);
+
+    --bg-red: hsl(176, 100%, 44%);
+    --bg-red_hover:  hsl(177, 92%, 70%);
+
+    --bg-toggle:  hsl(268, 71%, 12%);
+
+    --bg-value:  hsl(268, 71%, 12%);
+
+    --bg-num:hsl(268, 47%, 21%);
+    --bg-num_hover: hsl(290, 70%, 36%);
+
+}
+
+h1, h2, h3, h4 {
+    margin: 0;
+}
+
+body {
+    position: relative;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    list-style: none;
+    background: var(--bg-color) ;
+    font-family: 'League Spartan', sans-serif;
+    width: 100%;
+    height: 100vh;
+}
+
+.container {
+    position: relative;
+    max-width: 1440px;
+    padding: 0 15px;
+    height: 100vh;
+    margin: 0 auto;
+}
+
+.CalculatorApp {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    width: 40%;
+    min-width: 375px;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* HEADER */
+
+.header {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.header_theme {
+    position: relative;
+    display: flex;
+    gap: 20px;
+    align-items: flex-end;
+}
+
+.header_icon {
+    width: 60px;
+    display: flex;
+    flex-direction: column;
+}
+
+.num_icons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5px;
+    cursor: pointer;
+}
+
+.toggle {
+    height: 20px;
+    width: 100%;
+    position: relative;
+    border-radius: 20px;
+    background: var(--bg-toggle);
+    transition: .3s ease-in-out;
+}
+
+.toggle_icon {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background: var(--bg-red);
+    border-radius: 50%;
+    top: 3px;
+    left: 2px;
+    transition: .3s ease;
+    transform: translate(0%);
+}
+
+.toggle_icon:hover {
+    background: var(--bg-red_hover);
+}
+
+.container.darkTwo .toggle_icon {
+    transform: translate(145%);
+}
+
+.container.darkThree .toggle_icon {
+    transform: translate(290%);
+}
+
+.header h2 {
+    font-size: 32px;
+    color: var(--grayish);
+    line-height: normal;
+}
+
+.header span {
+    color: var(--grayish);
+}
+
+.header_theme> span {
+    line-height: normal;
+    font-size: 12px;
+}
+
+
+/* MAIN */
+
+main {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.formTitle {
+    height: 23%;
+    background: var(--bg-value);
+    border-radius: 0.5rem;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.formTitle h1 {
+    color: var(--grayish);
+    text-align: end;
+    letter-spacing: 2px;
+}
+
+.form_menu {
+    display: flex;
+    flex-direction: column;
+    gap: 85px;
+    position: relative;
+    height: 100%;
+    background: var(--bg-toggle);
+    border-radius: 0.5rem;
+    padding: 20px;
+}
+
+.form_menu> .form_menu_div button {
+    color: var(--grayishS);
+    font-weight: bold;
+    font-size: 27px;
+    border-radius: 0.5rem;
+    border: none;
+    box-shadow: 0px 3px 1px var(--bg-num_hover);
+    transform: translate3d(-1px, -1px, -1px);
+    width: 29%;
+    height: 45px;
+    background-color: var(--bg-num);
+    transition: .3s ease-in-out;
+    cursor: pointer;
+}
+
+.form_menu_div {
+    gap: 20px;
+    width: 68%;
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 10px;
+}
+
+.form_menu> .form_menu_div button:hover {
+    background-color: var( --bg-num_hover);
+}
+
+/* .form_menu> button:nth-child(4) {
+    background: #9c27b0;
+}
+
+.form_menu> button:nth-child(4)  {
+    font-size: 20px;
+    color: #fff;
+} */
+
+.result {
+    display: flex;
+    width: 100%;
+    gap: 20px;
+}
+
+.result button {
+    width: 100%;
+    height: 45px;
+    font-size: 20px;
+    cursor: pointer;
+    background: #27a0b0;
+    color: #fff;
+    box-shadow: 0px 3px 1px #2780b0;
+    border: none;
+    border-radius: .5rem;
+    transform: translate3d(-1px, -1px, -1px);
+    font-weight: bold;
+
+}
+
+.result button:nth-child(2) {
+    font-size: 32px;
+    background: #ed930f;
+    box-shadow: 0px 3px 1px #975b00;
+}
+
+.form_menu_div._edit {
+    position: absolute;
+    bottom: 32%;
+    left: 19px;
+}
+
+.form_menu_div._delt {
+    position: absolute;
+    width: 32%;
+    right: 0px;
+    top: 18px;
+    justify-content: center;
+}
+
+.form_menu_div._delt button {
+    width: 108px;
+}
+
+.form_menu_div._edit button {
+    width: 27%;
+}
+
+@media (max-width: 992px) {
+
+    
+    .form_menu> .form_menu_div button {
+        width: 27%;
+    }
+
+    .form_menu_div._edit button {
+        width: 24%;
+    }
+
+    .form_menu_div._edit {
+        position: absolute;
+        bottom: 23%;
+        left: 19px;
+    }
+
+    .form_menu_div._delt button {
+        width: 62px;
+    }
+
+    .form_menu_div._delt {
+        top: 25px;
+        font-size: 27px;
+    }
+    
+    
+
+}
+
+
+@media (max-width: 576px) {
+
+    .CalculatorApp {
+        min-width: auto;
+        width: 90%;
+    }
+
+    .result button {
+        width: 100%;
+        height: 45px;
+        font-size: 16px;
+    }
+
+    /* .form_menu> button:nth-child(4) {
+        font-size: 16px;
+    } */
+
+    .form_menu> .form_menu_div button {
+        font-size: 20px;
+        height: 40px;
+    }
+
+    .formTitle {
+        padding: 20px;
+    }
+
+    .form_menu {
+        padding: 15px;
+        gap: 80px;
+    }
+
+    .form_menu> .form_menu_div button {
+        width: 26%;
+    }
+
+    .form_menu_div {
+        width: 72%;
+    }
+
+    .form_menu_div._edit button {
+        width: 24.4%;
+    }
+
+    .form_menu_div._edit {
+        position: absolute;
+        bottom: 100px;
+        left: 15px;
+    }
+
+    .form_menu_div._delt button {
+        width: 60%;
+    }
+
+    .form_menu_div._delt {
+        top: 14px;
+        /* font-size: 27px; */
+    }
+        
+}
+
+
