@@ -17,9 +17,9 @@
               <span> THEME </span>
               <div class="header_icon">
                 <div class="num_icons">
-                  <span class="one">1</span>
-                  <span class="two">2</span>
-                  <span class="three">3</span>
+                  <span onclick="darkHandle('darkOne')" >1</span>
+                  <span onclick="darkHandle('darkTwo')" >2</span>
+                  <span onclick="darkHandle('darkThree')" >3</span>
                 </div>
                 <div class="toggle">
                   <span class="toggle_icon"></span>
@@ -28,39 +28,34 @@
             </div>
           </header>
           <main>
-            <form class="form">
+            <div class="form">
               <div class="formTitle">
-                <h1>12345 </h1>
+                <h1 id="Value">0</h1>
               </div>
               <div class="form_menu">
-
                 <div class="form_menu_div _menu">
-
-                </div>
-
-                <div class="form_menu_div _edit">
-                  <button>.</button>
-                  <button>0</button>
-                  <button>/</button>
+                  <button onclick="addHandlerItems('.')">.</button>
+                  <button onclick={addHandlerItems(0)}>0</button>
+                  <button onclick="changeHandle('/')">/</button>
                 </div>
 
                 <div class="form_menu_div _delt">
-                  <button>DEL</button>
-                  <button>+</button>
-                  <button>-</button>
-                  <button>x</button>
+                  <button onclick="changeHandle('*')">x</button>
+                  <button onclick="changeHandle('-')">-</button>
+                  <button onclick="changeHandle('+')">+</button>
+                  <button onclick="delHandler()">DEL</button>
                 </div>
 
                 <div class="result">
-                  <button>
+                  <button onclick="resHandler()">
                     <span>RESET</span>
                   </button>
-                  <button>
+                  <button onclick="resultHandle()">
                     <span>=</span>
                   </button>
                 </div>
               </div>
-            </form>
+            </div>
           </main>
         </div>
       </div>
